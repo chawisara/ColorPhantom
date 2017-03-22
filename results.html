@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Color Phantom</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body onload="updateBar(10); displayScore()">
+
+
+    <!-- Header -->
+     <header style="background-color: #4CA197; padding:0px; margin:0px">
+      <h4 style="padding:9px; margin:0px; color:white"><strong>ColorPhantom</strong><span style="padding-left:1.5em"> A color identification game</span></h4>
+    </header>
+
+
+    <div id="top" class="header">
+      <div class="container text-vertical-center">
+        <div class="row">
+           <h2 style="padding:0px; margin:0px">Your Score: <span style="padding-left:5px; color:#41A47A; font-size:200%" id="score"><strong></strong></span></h2>
+          <br>
+          <br>
+        </div>
+        <div><img src="img/explain.png">
+        </div>
+          <br>
+          <br>
+          <div class="row">
+              <p>Most people can distinguish the smaller squares when they are displayed alone without conflicting colors.</p>
+              <p>However, when surrounded with contrasting or complementary colors the appearance of the central squares will seem to change.</p>
+              <p>This is called the simultaneous color contrast effect.</p>
+              <p>Now, do you still trust your eyes?</p>
+          </div>
+          <div class="row">
+            <br>
+          </div>
+          <div class="row">
+            <form id="scores" method="post">
+              <input id="q1" name="q1" type="hidden" class="answer">
+              <input id="q2" name="q2" type="hidden" class="answer">
+              <input id="q3" name="q3" type="hidden" class="answer">
+              <input id="q4" name="q4" type="hidden" class="answer">
+              <input id="q5" name="q5" type="hidden" class="answer">
+              <input id="q6" name="q6" type="hidden" class="answer">
+              <input id="q7" name="q7" type="hidden" class="answer">
+              <input id="q8" name="q8" type="hidden" class="answer">
+              <input id="q9" name="q9" type="hidden" class="answer">
+              <input id="q10" name="q10" type="hidden" class="answer">
+              <a id="done" href="index.html" class="btn btn-dark btn-lg">back to home</a>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center" style="margin-left:10%; margin-right:10%">
+      <div class="progress">
+        <div class="progress-bar" id="progright1" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong1" role="progressbar"></div>
+        <div class="progress-bar" id="progright2" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong2" role="progressbar"></div>
+        <div class="progress-bar" id="progright3" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong3" role="progressbar"></div>
+        <div class="progress-bar" id="progright4" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong4" role="progressbar"></div>
+        <div class="progress-bar" id="progright5" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong5" role="progressbar"></div>
+        <div class="progress-bar" id="progright6" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong6" role="progressbar"></div>
+        <div class="progress-bar" id="progright7" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong7" role="progressbar"></div>
+        <div class="progress-bar" id="progright8" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong8" role="progressbar"></div>
+        <div class="progress-bar" id="progright9" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong9" role="progressbar"></div>
+        <div class="progress-bar" id="progright10" role="progressbar"></div>
+        <div class="progress-bar progress-bar-danger" id="progwrong10" role="progressbar"></div>
+      </div>
+    </footer>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src='js/google-sheet.js'></script>
+
+  
+  <!--Custom-->
+  <script src="js/check.js"></script>
+
+
+
+<!--   <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBfC9QmgL0zgLSfHmLvhTJcbPxLgV5hYO0",
+      authDomain: "colorphantom-29474.firebaseapp.com",
+      databaseURL: "https://colorphantom-29474.firebaseio.com",
+      storageBucket: "colorphantom-29474.appspot.com",
+      messagingSenderId: "515894075664"
+    };
+    firebase.initializeApp(config);
+
+
+
+    // var url = "https://colorphantom-29474.firebaseio.com/";
+    // var firebaseRef = new Firebase(url);
+
+    function toDB(){
+
+      var a=getAns();
+      window.alert(a);
+      var answers=a.split(" ");
+
+      var dbRef=firebase.database().ref('users/').set({
+        q1: answers[0],
+        q2: answers[1],
+        q3: answers[2],
+        q4: answers[3],
+        q5: answers[4],
+        q6: answers[5],
+        q7: answers[6],
+        q8: answers[7],
+        q7: answers[8],
+        q8: answers[9]
+      });
+    }
+
+
+
+  </script> -->
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+   
+</body>
+
+</html>
